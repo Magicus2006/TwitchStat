@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1413693B26279572003184D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413693A26279572003184D1 /* AppDelegate.swift */; };
+		1413693D26279572003184D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413693C26279572003184D1 /* SceneDelegate.swift */; };
+		1413693F26279572003184D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413693E26279572003184D1 /* MainViewController.swift */; };
+		1413694226279572003184D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1413694026279572003184D1 /* Main.storyboard */; };
+		1413694426279577003184D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1413694326279577003184D1 /* Assets.xcassets */; };
+		1413694726279577003184D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1413694526279577003184D1 /* LaunchScreen.storyboard */; };
+		14136953262795EB003184D1 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14136952262795EB003184D1 /* MainPresenter.swift */; };
+		1413695F26279B60003184D1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1413695E26279B60003184D1 /* MainViewController.xib */; };
+		1413696226279D74003184D1 /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413696126279D74003184D1 /* AssemblyModuleBuilder.swift */; };
+		14136969262ECF09003184D1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14136968262ECF09003184D1 /* NetworkService.swift */; };
+		141C67CD2630ABF600670A35 /* TopGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C67CC2630ABF600670A35 /* TopGames.swift */; };
+		141C67DA2630C57B00670A35 /* TwitchStatModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 141C67D82630C57B00670A35 /* TwitchStatModel.xcdatamodeld */; };
+		141C67E52630C73B00670A35 /* DBTopGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C67E42630C73B00670A35 /* DBTopGames.swift */; };
+		141F939A262ED941006572E1 /* DetailPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F9399262ED941006572E1 /* DetailPresentor.swift */; };
+		141F93A4262EDB18006572E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F93A2262EDB18006572E1 /* DetailViewController.swift */; };
+		141F93A5262EDB18006572E1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141F93A3262EDB18006572E1 /* DetailViewController.xib */; };
+		141F93A8262F0613006572E1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F93A7262F0613006572E1 /* RouterProtocol.swift */; };
+		141F93B3262F460E006572E1 /* TwitchStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F93B2262F460E006572E1 /* TwitchStatTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		141F93B5262F460E006572E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1413692F26279572003184D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1413693626279572003184D1;
+			remoteInfo = MVP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1413693726279572003184D1 /* TwitchStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1413693A26279572003184D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1413693C26279572003184D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1413693E26279572003184D1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1413694126279572003184D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1413694326279577003184D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1413694626279577003184D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1413694826279577003184D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14136952262795EB003184D1 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		1413695E26279B60003184D1 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1413696126279D74003184D1 /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
+		14136968262ECF09003184D1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		141C67CC2630ABF600670A35 /* TopGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGames.swift; sourceTree = "<group>"; };
+		141C67D92630C57B00670A35 /* TwitchStat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitchStat.xcdatamodel; sourceTree = "<group>"; };
+		141C67E42630C73B00670A35 /* DBTopGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTopGames.swift; sourceTree = "<group>"; };
+		141F9399262ED941006572E1 /* DetailPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresentor.swift; sourceTree = "<group>"; };
+		141F93A2262EDB18006572E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		141F93A3262EDB18006572E1 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		141F93A7262F0613006572E1 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		141F93B0262F460E006572E1 /* TwitchStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitchStatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		141F93B2262F460E006572E1 /* TwitchStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchStatTests.swift; sourceTree = "<group>"; };
+		141F93B4262F460E006572E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1413693426279572003184D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		141F93AD262F460E006572E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1413692E26279572003184D1 = {
+			isa = PBXGroup;
+			children = (
+				1413693926279572003184D1 /* TwitchStat */,
+				141F93B1262F460E006572E1 /* TwitchStatTests */,
+				1413693826279572003184D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1413693826279572003184D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1413693726279572003184D1 /* TwitchStat.app */,
+				141F93B0262F460E006572E1 /* TwitchStatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1413693926279572003184D1 /* TwitchStat */ = {
+			isa = PBXGroup;
+			children = (
+				1413693A26279572003184D1 /* AppDelegate.swift */,
+				1413693C26279572003184D1 /* SceneDelegate.swift */,
+				1413696126279D74003184D1 /* AssemblyModuleBuilder.swift */,
+				141F93A7262F0613006572E1 /* RouterProtocol.swift */,
+				141F939E262EDAF3006572E1 /* DetailModule */,
+				1413696B262ECF33003184D1 /* ServiceLayer */,
+				1413695626279A9C003184D1 /* MainModule */,
+				1413694326279577003184D1 /* Assets.xcassets */,
+				1413694526279577003184D1 /* LaunchScreen.storyboard */,
+				1413694826279577003184D1 /* Info.plist */,
+				1413694026279572003184D1 /* Main.storyboard */,
+				141C67D82630C57B00670A35 /* TwitchStatModel.xcdatamodeld */,
+			);
+			path = TwitchStat;
+			sourceTree = "<group>";
+		};
+		1413695626279A9C003184D1 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				1413695826279ADD003184D1 /* View */,
+				1413695A26279AEA003184D1 /* Model */,
+				1413695C26279AF3003184D1 /* Presentor */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		1413695826279ADD003184D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1413693E26279572003184D1 /* MainViewController.swift */,
+				1413695E26279B60003184D1 /* MainViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1413695A26279AEA003184D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				141C67CC2630ABF600670A35 /* TopGames.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1413695C26279AF3003184D1 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+				14136952262795EB003184D1 /* MainPresenter.swift */,
+			);
+			path = Presentor;
+			sourceTree = "<group>";
+		};
+		1413696B262ECF33003184D1 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				14136968262ECF09003184D1 /* NetworkService.swift */,
+				141C67E42630C73B00670A35 /* DBTopGames.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		141F939C262EDADF006572E1 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+				141F9399262ED941006572E1 /* DetailPresentor.swift */,
+			);
+			path = Presentor;
+			sourceTree = "<group>";
+		};
+		141F939E262EDAF3006572E1 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				141F93A1262EDB05006572E1 /* View */,
+				141F939C262EDADF006572E1 /* Presentor */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		141F93A1262EDB05006572E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				141F93A2262EDB18006572E1 /* DetailViewController.swift */,
+				141F93A3262EDB18006572E1 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		141F93B1262F460E006572E1 /* TwitchStatTests */ = {
+			isa = PBXGroup;
+			children = (
+				141F93B2262F460E006572E1 /* TwitchStatTests.swift */,
+				141F93B4262F460E006572E1 /* Info.plist */,
+			);
+			path = TwitchStatTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1413693626279572003184D1 /* TwitchStat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1413694B26279577003184D1 /* Build configuration list for PBXNativeTarget "TwitchStat" */;
+			buildPhases = (
+				1413693326279572003184D1 /* Sources */,
+				1413693426279572003184D1 /* Frameworks */,
+				1413693526279572003184D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitchStat;
+			productName = MVP;
+			productReference = 1413693726279572003184D1 /* TwitchStat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		141F93AF262F460E006572E1 /* TwitchStatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 141F93B7262F460E006572E1 /* Build configuration list for PBXNativeTarget "TwitchStatTests" */;
+			buildPhases = (
+				141F93AC262F460E006572E1 /* Sources */,
+				141F93AD262F460E006572E1 /* Frameworks */,
+				141F93AE262F460E006572E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				141F93B6262F460E006572E1 /* PBXTargetDependency */,
+			);
+			name = TwitchStatTests;
+			productName = MVPTests;
+			productReference = 141F93B0262F460E006572E1 /* TwitchStatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1413692F26279572003184D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1413693626279572003184D1 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					141F93AF262F460E006572E1 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1413693626279572003184D1;
+					};
+				};
+			};
+			buildConfigurationList = 1413693226279572003184D1 /* Build configuration list for PBXProject "TwitchStat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1413692E26279572003184D1;
+			productRefGroup = 1413693826279572003184D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1413693626279572003184D1 /* TwitchStat */,
+				141F93AF262F460E006572E1 /* TwitchStatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1413693526279572003184D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1413694726279577003184D1 /* LaunchScreen.storyboard in Resources */,
+				1413694426279577003184D1 /* Assets.xcassets in Resources */,
+				141F93A5262EDB18006572E1 /* DetailViewController.xib in Resources */,
+				1413694226279572003184D1 /* Main.storyboard in Resources */,
+				1413695F26279B60003184D1 /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		141F93AE262F460E006572E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1413693326279572003184D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141F93A4262EDB18006572E1 /* DetailViewController.swift in Sources */,
+				14136953262795EB003184D1 /* MainPresenter.swift in Sources */,
+				141C67CD2630ABF600670A35 /* TopGames.swift in Sources */,
+				141F93A8262F0613006572E1 /* RouterProtocol.swift in Sources */,
+				141C67E52630C73B00670A35 /* DBTopGames.swift in Sources */,
+				1413693F26279572003184D1 /* MainViewController.swift in Sources */,
+				1413693B26279572003184D1 /* AppDelegate.swift in Sources */,
+				1413693D26279572003184D1 /* SceneDelegate.swift in Sources */,
+				141F939A262ED941006572E1 /* DetailPresentor.swift in Sources */,
+				1413696226279D74003184D1 /* AssemblyModuleBuilder.swift in Sources */,
+				141C67DA2630C57B00670A35 /* TwitchStatModel.xcdatamodeld in Sources */,
+				14136969262ECF09003184D1 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		141F93AC262F460E006572E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141F93B3262F460E006572E1 /* TwitchStatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		141F93B6262F460E006572E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1413693626279572003184D1 /* TwitchStat */;
+			targetProxy = 141F93B5262F460E006572E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1413694026279572003184D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1413694126279572003184D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1413694526279577003184D1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1413694626279577003184D1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1413694926279577003184D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1413694A26279577003184D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1413694C26279577003184D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E4JN2Z7689;
+				INFOPLIST_FILE = "$(SRCROOT)/TwitchStat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinat.TwitchStat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1413694D26279577003184D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E4JN2Z7689;
+				INFOPLIST_FILE = "$(SRCROOT)/TwitchStat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinat.TwitchStat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		141F93B8262F460E006572E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E4JN2Z7689;
+				INFOPLIST_FILE = TwitchStatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinat.TwitchStatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitchStat.app/TwitchStat";
+			};
+			name = Debug;
+		};
+		141F93B9262F460E006572E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E4JN2Z7689;
+				INFOPLIST_FILE = TwitchStatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinat.TwitchStatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitchStat.app/TwitchStat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1413693226279572003184D1 /* Build configuration list for PBXProject "TwitchStat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1413694926279577003184D1 /* Debug */,
+				1413694A26279577003184D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1413694B26279577003184D1 /* Build configuration list for PBXNativeTarget "TwitchStat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1413694C26279577003184D1 /* Debug */,
+				1413694D26279577003184D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		141F93B7262F460E006572E1 /* Build configuration list for PBXNativeTarget "TwitchStatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				141F93B8262F460E006572E1 /* Debug */,
+				141F93B9262F460E006572E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		141C67D82630C57B00670A35 /* TwitchStatModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				141C67D92630C57B00670A35 /* TwitchStat.xcdatamodel */,
+			);
+			currentVersion = 141C67D92630C57B00670A35 /* TwitchStat.xcdatamodel */;
+			path = TwitchStatModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1413692F26279572003184D1 /* Project object */;
+}
