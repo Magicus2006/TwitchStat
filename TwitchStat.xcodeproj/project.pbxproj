@@ -25,6 +25,9 @@
 		141F93A5262EDB18006572E1 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141F93A3262EDB18006572E1 /* DetailViewController.xib */; };
 		141F93A8262F0613006572E1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F93A7262F0613006572E1 /* RouterProtocol.swift */; };
 		141F93B3262F460E006572E1 /* TwitchStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F93B2262F460E006572E1 /* TwitchStatTests.swift */; };
+		1475EE6D263796EF00F04217 /* GenerealApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475EE6C263796EF00F04217 /* GenerealApiRequest.swift */; };
+		1475EE712637973E00F04217 /* TopGamesApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475EE702637973E00F04217 /* TopGamesApiRequest.swift */; };
+		1475EE752637989400F04217 /* EntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475EE742637989400F04217 /* EntityGateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		141F93B0262F460E006572E1 /* TwitchStatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitchStatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		141F93B2262F460E006572E1 /* TwitchStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchStatTests.swift; sourceTree = "<group>"; };
 		141F93B4262F460E006572E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1475EE6C263796EF00F04217 /* GenerealApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerealApiRequest.swift; sourceTree = "<group>"; };
+		1475EE702637973E00F04217 /* TopGamesApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesApiRequest.swift; sourceTree = "<group>"; };
+		1475EE742637989400F04217 /* EntityGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +107,14 @@
 		1413693926279572003184D1 /* TwitchStat */ = {
 			isa = PBXGroup;
 			children = (
+				1475EE6626378DDF00F04217 /* EntityTopGame */,
+				1413696B262ECF33003184D1 /* ServiceLayer */,
 				1413693A26279572003184D1 /* AppDelegate.swift */,
 				1413693C26279572003184D1 /* SceneDelegate.swift */,
 				1413696126279D74003184D1 /* AssemblyModuleBuilder.swift */,
 				141F93A7262F0613006572E1 /* RouterProtocol.swift */,
-				141F939E262EDAF3006572E1 /* DetailModule */,
-				1413696B262ECF33003184D1 /* ServiceLayer */,
 				1413695626279A9C003184D1 /* MainModule */,
+				141F939E262EDAF3006572E1 /* DetailModule */,
 				1413694326279577003184D1 /* Assets.xcassets */,
 				1413694526279577003184D1 /* LaunchScreen.storyboard */,
 				1413694826279577003184D1 /* Info.plist */,
@@ -194,6 +201,24 @@
 				141F93B4262F460E006572E1 /* Info.plist */,
 			);
 			path = TwitchStatTests;
+			sourceTree = "<group>";
+		};
+		1475EE6626378DDF00F04217 /* EntityTopGame */ = {
+			isa = PBXGroup;
+			children = (
+				1475EE692637966500F04217 /* ApiRequest */,
+				1475EE742637989400F04217 /* EntityGateway.swift */,
+			);
+			path = EntityTopGame;
+			sourceTree = "<group>";
+		};
+		1475EE692637966500F04217 /* ApiRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1475EE6C263796EF00F04217 /* GenerealApiRequest.swift */,
+				1475EE702637973E00F04217 /* TopGamesApiRequest.swift */,
+			);
+			path = ApiRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +329,10 @@
 				141F93A8262F0613006572E1 /* RouterProtocol.swift in Sources */,
 				141C67E52630C73B00670A35 /* DBTopGames.swift in Sources */,
 				1413693F26279572003184D1 /* MainViewController.swift in Sources */,
+				1475EE6D263796EF00F04217 /* GenerealApiRequest.swift in Sources */,
 				1413693B26279572003184D1 /* AppDelegate.swift in Sources */,
+				1475EE752637989400F04217 /* EntityGateway.swift in Sources */,
+				1475EE712637973E00F04217 /* TopGamesApiRequest.swift in Sources */,
 				1413693D26279572003184D1 /* SceneDelegate.swift in Sources */,
 				141F939A262ED941006572E1 /* DetailPresentor.swift in Sources */,
 				1413696226279D74003184D1 /* AssemblyModuleBuilder.swift in Sources */,

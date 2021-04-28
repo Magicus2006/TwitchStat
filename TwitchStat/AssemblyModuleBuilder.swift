@@ -17,8 +17,8 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol {
     func createMainModule(router: RouteProtocol) -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()
-        let dbTopGames = DBTopGames()
-        let presenter = MainPresenter(view: view, networkService: networkService, dbTopGames: dbTopGames, router: router)
+        let entityGateway = EntityGateway(networkService: networkService)
+        let presenter = MainPresenter(view: view, entityGateway: entityGateway, router: router)
         view.presenter = presenter
         return view
     }

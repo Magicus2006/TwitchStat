@@ -14,48 +14,49 @@ protocol MainViewProtocol: class {
 }
 
 protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, dbTopGames: DBTopGamesProtocol, router: RouteProtocol)
-    func getComments()
     var topGames: TopGames? { get set }
-    func tapOnTheComment(top: Top?)
+    init(view: MainViewProtocol, entityGateway: EntityGatewayProtocol, router: RouteProtocol)
+    func getTopGames()
+    func tapOnTheGemas(top: Top?)
+    func lastRowVisble(row: Int)
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
     var router: RouteProtocol?
-    let networkService: NetworkServiceProtocol!
-    let dbTopGames: DBTopGamesProtocol!
+    let entityGateway: EntityGatewayProtocol
     var topGames: TopGames?
     
-    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, dbTopGames: DBTopGamesProtocol, router: RouteProtocol) {
+    required init(view: MainViewProtocol, entityGateway: EntityGatewayProtocol, router: RouteProtocol) {
         self.view = view
-        self.networkService = networkService
-        self.dbTopGames = dbTopGames
+        self.entityGateway = entityGateway
         self.router = router
-        getComments()
+        self.getTopGames()
     }
-    func tapOnTheComment(top: Top?) {
+    
+    func tapOnTheGemas(top: Top?) {
         router?.showDetail(top: top)
     }
     
-    func getComments() {
-        networkService.getTopGames { [weak self] result in
+    func getTopGames() {
+        entityGateway.fetchTopGames { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 switch result {
                 case .success(let topGames):
                     self.topGames = topGames
-                    self.dbTopGames.saveTopGames(topGames: topGames)
+                    //print("Total: \(self.topGames?.total)")
                     self.view?.success()
                 case .failure(let error):
                     print("NetworkService Failure")
-                    self.topGames = self.dbTopGames.loadTopGames()
-                    self.view?.success()
-                    //self.view?.failure(error: error)
+                    self.view?.failure(error: error)
                 }
             }
         }
+    }
+    func lastRowVisble(row: Int) {
+        print("Row: \(row)")
     }
     
 

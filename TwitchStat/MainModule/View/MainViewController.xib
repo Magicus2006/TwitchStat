@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MVP" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="TwitchStat" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="jhg-hE-j1S" id="nfb-KK-d6R"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OgO-46-7ua"/>
@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-hE-j1S">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-hE-j1S">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="KN2-HH-Ziw"/>
@@ -31,6 +30,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jhg-hE-j1S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZEw-Mc-Fte"/>
+                <constraint firstItem="jhg-hE-j1S" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ztv-kq-c7V"/>
+                <constraint firstItem="jhg-hE-j1S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ehQ-f1-E4n"/>
+                <constraint firstAttribute="bottom" secondItem="jhg-hE-j1S" secondAttribute="bottom" id="gFk-Qi-tZC"/>
+            </constraints>
             <point key="canvasLocation" x="44.927536231884062" y="103.79464285714285"/>
         </view>
     </objects>
