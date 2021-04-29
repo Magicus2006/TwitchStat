@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func fetchTopGames(complation: @escaping (Result<TopGames?, Error >) -> ())
+    func fetchTopGames(complation: @escaping (Result<Data?, Error >) -> ())
 }
 
 
@@ -23,25 +23,23 @@ protocol ApiRequestProtocol {
 
 
 class NetworkService: NetworkServiceProtocol {
-    func fetchTopGames(complation: @escaping (Result<TopGames?, Error>) -> ()) {
-       
+    func fetchTopGames(complation: @escaping (Result<Data?, Error>) -> ()) {
         let topGamesApiRequest = TopGamesApiRequest()
-        
         URLSession.shared.dataTask(with: topGamesApiRequest.urlRequest) { data, _, error in
             if let error = error {
                 complation(.failure(error))
                 return
             }
-            
-            do {
-                let obj = try JSONDecoder().decode(TopGames.self, from: data!)
-                complation(.success(obj))
-            } catch {
-                complation(.failure(error))
-            }
+            complation(.success(data))
         }.resume()
     }
+    func fetchTopGames(limit: Int, offset: Int, complation: @escaping (Result<Data?, Error>) -> ()) {
+        
+    }
     
+    deinit {
+        print("NetworkService: deinit")
+    }
     
     
 }

@@ -7,11 +7,11 @@
 
 import Foundation
  
-protocol DetailViewProtocol: class {
+protocol DetailViewProtocol: AnyObject {
     func setComment(top: Top?)
 }
 
-protocol DetailViewPresentorProtocol: class {
+protocol DetailViewPresentorProtocol: AnyObject {
     init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouteProtocol, top: Top?)
     func setComment()
     func tap()

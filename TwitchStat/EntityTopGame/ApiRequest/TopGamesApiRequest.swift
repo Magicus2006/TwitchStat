@@ -8,9 +8,11 @@
 import Foundation
 
 class TopGamesApiRequest: GeneralApiRequest, ApiRequestProtocol {
+    var limit: Int = 40
+    var offset: Int = 0
+
     var urlRequest: URLRequest {
-        let limit: Int = 40
-        let offset: Int = 0
+        
         let url: URL! = URL(string: "\(baseUrl)/top?limit=\(limit)&offset=\(offset)")
         var request = URLRequest(url: url)
         
@@ -20,5 +22,17 @@ class TopGamesApiRequest: GeneralApiRequest, ApiRequestProtocol {
         request.httpMethod = "GET"
         
         return request
+    }
+    
+    override init() {
+    }
+    
+    init(limit: Int, offset: Int) {
+        self.limit = limit
+        self.offset = offset
+    }
+    
+    deinit {
+        print("TopGamesApiRequest: deinit")
     }
 }

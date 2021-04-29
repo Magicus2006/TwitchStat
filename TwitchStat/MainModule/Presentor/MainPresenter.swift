@@ -7,46 +7,61 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
     func success()
     func failure(error: Error)
     
+    
 }
 
-protocol MainViewPresenterProtocol: class {
+protocol MainViewPresenterProtocol: AnyObject {
     var topGames: TopGames? { get set }
-    init(view: MainViewProtocol, entityGateway: EntityGatewayProtocol, router: RouteProtocol)
-    func getTopGames()
-    func tapOnTheGemas(top: Top?)
+    var countTopGames: Int { get }
+    init(view: MainViewProtocol, entityTopGamesGateway: EntityGatewayTopGamesProtocol, router: RouteProtocol)
+    func initTopGames()
+    func tapOnTheGemas(forRow row: Int)
     func lastRowVisble(row: Int)
+    func setCell(cell: MainTableViewCell, forRow row: Int)
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
     var router: RouteProtocol?
-    let entityGateway: EntityGatewayProtocol
+    var entityTopGamesGateway: EntityGatewayTopGamesProtocol?
     var topGames: TopGames?
+    var countTopGames: Int = 0
     
-    required init(view: MainViewProtocol, entityGateway: EntityGatewayProtocol, router: RouteProtocol) {
+    
+    required init(view: MainViewProtocol, entityTopGamesGateway: EntityGatewayTopGamesProtocol, router: RouteProtocol) {
         self.view = view
-        self.entityGateway = entityGateway
+        self.entityTopGamesGateway = entityTopGamesGateway
         self.router = router
-        self.getTopGames()
+        self.initTopGames()
     }
     
-    func tapOnTheGemas(top: Top?) {
+    func tapOnTheGemas(forRow row: Int) {
+        let top = self.topGames?.top[safe: row]
         router?.showDetail(top: top)
     }
     
-    func getTopGames() {
-        entityGateway.fetchTopGames { [weak self] result in
+    func setCell(cell: MainTableViewCell, forRow row: Int) {
+        if let nameGame = topGames?.top[safe: row]?.game.name {
+            cell.display(gameName: nameGame)
+        } else {
+            cell.waitLoading()
+        }
+    }
+    
+    
+    func initTopGames() {
+        entityTopGamesGateway?.fetchInitTopGames { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 switch result {
                 case .success(let topGames):
                     self.topGames = topGames
-                    //print("Total: \(self.topGames?.total)")
+                    self.setCountTopGames()
                     self.view?.success()
                 case .failure(let error):
                     print("NetworkService Failure")
@@ -55,8 +70,23 @@ class MainPresenter: MainViewPresenterProtocol {
             }
         }
     }
+    
+    
+    
+    private func setCountTopGames() {
+        if let count = self.topGames?.top.count {
+            if count == self.topGames?.total {
+                self.countTopGames = count
+            } else if count < self.topGames?.total ?? 0 {
+                self.countTopGames = count + 1
+            } else {
+                self.countTopGames = 0
+            }
+        }
+    }
+    
     func lastRowVisble(row: Int) {
-        print("Row: \(row)")
+        //print("Row: \(row)")
     }
     
 

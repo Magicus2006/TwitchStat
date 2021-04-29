@@ -10,6 +10,9 @@ import Foundation
 // MARK: - TopGames
 struct TopGames: Codable {
     let total: Int
+    var limit = 40
+    var offset = 0
+    
     var top: [Top]
 
     enum CodingKeys: String, CodingKey {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RouterMain {
+protocol RouterMain: AnyObject {
     var navigationController: UINavigationController? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
 }
@@ -16,11 +16,13 @@ protocol RouteProtocol: RouterMain {
     func initialViewController()
     func showDetail(top: Top?)
     func popToRoot()
+    var identitety: String { get }
 }
 
 class Router: RouteProtocol {
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
+    var identitety = "RouterProtokol"
     
     init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol) {
         self.navigationController = navigationController

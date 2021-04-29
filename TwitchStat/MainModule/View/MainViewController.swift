@@ -20,22 +20,21 @@ class MainViewController: UIViewController {
     // MARK: LifeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(MainTableViewCell.nib(), forCellReuseIdentifier: MainTableViewCell.identifier)
     }
 
 }
+// MARK: UITableViewDataSource
 
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.topGames?.top.count ?? 0
+        return presenter.countTopGames
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let nameGame = presenter.topGames?.top[indexPath.row].game.name
-        cell.textLabel?.text = nameGame
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+        presenter.setCell(cell: cell, forRow: indexPath.row)
         return cell
     }
     
@@ -45,19 +44,18 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let top = presenter.topGames?.top[indexPath.row]
-        presenter.tapOnTheGemas(top: top)
+        presenter.tapOnTheGemas(forRow: indexPath.row)
     }
 }
 
 // MARK: UIScrollViewDelegate
 
 extension MainViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let row = tableView.indexPathsForVisibleRows?.last?[1] {
             presenter.lastRowVisble(row: row)
         }
-    }
+    }*/
 }
 
 // MARK: MainViewProtocol
