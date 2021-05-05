@@ -31,6 +31,7 @@ class MainTableViewCell: UITableViewCell {
     
     func display(gameName: String) {
         activityIndicator.isHidden = true
+        gamesNameLabel.isHidden = false
         gamesNameLabel.text = gameName
     }
     

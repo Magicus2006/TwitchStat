@@ -48,7 +48,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-// MARK: UIScrollViewDelegate
+/*// MARK: UIScrollViewDelegate
 
 extension MainViewController: UIScrollViewDelegate {
     /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -56,7 +56,7 @@ extension MainViewController: UIScrollViewDelegate {
             presenter.lastRowVisble(row: row)
         }
     }*/
-}
+}*/
 
 // MARK: MainViewProtocol
 

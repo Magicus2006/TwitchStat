@@ -27,8 +27,7 @@ class TopGamesApiRequest: GeneralApiRequest, ApiRequestProtocol {
     override init() {
     }
     
-    init(limit: Int, offset: Int) {
-        self.limit = limit
+    init(offset: Int) {
         self.offset = offset
     }
     

@@ -20,7 +20,7 @@ protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, entityTopGamesGateway: EntityGatewayTopGamesProtocol, router: RouteProtocol)
     func initTopGames()
     func tapOnTheGemas(forRow row: Int)
-    func lastRowVisble(row: Int)
+    //func lastRowVisble(row: Int)
     func setCell(cell: MainTableViewCell, forRow row: Int)
 }
 
@@ -30,6 +30,7 @@ class MainPresenter: MainViewPresenterProtocol {
     var entityTopGamesGateway: EntityGatewayTopGamesProtocol?
     var topGames: TopGames?
     var countTopGames: Int = 0
+    var cache = Cache<Int, TopGames>()
     
     
     required init(view: MainViewProtocol, entityTopGamesGateway: EntityGatewayTopGamesProtocol, router: RouteProtocol) {
@@ -46,21 +47,71 @@ class MainPresenter: MainViewPresenterProtocol {
     
     func setCell(cell: MainTableViewCell, forRow row: Int) {
         if let nameGame = topGames?.top[safe: row]?.game.name {
-            cell.display(gameName: nameGame)
+            if let id = self.topGames?.top[safe: row]?.game.id {
+                let stringDisplay = "\(row)# \(id): \(nameGame)"
+                //cell.display(gameName: nameGame)
+                cell.display(gameName: stringDisplay)
+                //print(nameGame)
+            }
         } else {
+            self.nextFetchTopGames()
             cell.waitLoading()
         }
     }
     
     
     func initTopGames() {
-        entityTopGamesGateway?.fetchInitTopGames { [weak self] result in
+        self.fetchTopGames(offset: 0)
+        /*entityTopGamesGateway?.fetchInitTopGames { [weak self] result in
+            guard let self = self else { return }
+            print("initTopGames: Limit: \(self.topGames?.limit), Offset: \(self.topGames?.offset)")
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let topGames):
+                    self.topGames = topGames
+                    self.setCountTopGames()
+                    self.view?.success()
+                    print("Return initTopGames: Limit: \(self.topGames?.limit), Offset: \(self.topGames?.offset)")
+                case .failure(let error):
+                    print("NetworkService Failure")
+                    self.view?.failure(error: error)
+                }
+            }
+        }*/
+    }
+    
+    func nextFetchTopGames() {
+        guard let limit = self.topGames?.limit else { return }
+        let offset = self.topGames?.offset ?? 0
+        let newOffset = offset + limit
+        self.fetchTopGames(offset: newOffset)
+        
+        
+        
+    }
+    
+    private func fetchTopGames(offset: Int) {
+        if let cached = cache[offset] {
+            self.topGames = cached
+            self.setCountTopGames()
+            self.view?.success()
+            print("Network cahced")
+            return
+        }
+        
+        entityTopGamesGateway?.fetchOffsetTopGames(offset: offset, complation: { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 switch result {
                 case .success(let topGames):
-                    self.topGames = topGames
+                    if self.topGames == nil {
+                        self.topGames = topGames
+                    } else if let top = topGames?.top {
+                        self.topGames?.top.append(contentsOf: top)
+                        self.topGames?.offset = offset
+                    }
+                    self.cache[offset] = self.topGames
                     self.setCountTopGames()
                     self.view?.success()
                 case .failure(let error):
@@ -68,7 +119,8 @@ class MainPresenter: MainViewPresenterProtocol {
                     self.view?.failure(error: error)
                 }
             }
-        }
+            
+        })
     }
     
     
@@ -85,9 +137,9 @@ class MainPresenter: MainViewPresenterProtocol {
         }
     }
     
-    func lastRowVisble(row: Int) {
+    /*func lastRowVisble(row: Int) {
         //print("Row: \(row)")
-    }
+    }*/
     
 
     

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - TopGames
-struct TopGames: Codable {
+class TopGames: Codable {
     let total: Int
     var limit = 40
     var offset = 0
